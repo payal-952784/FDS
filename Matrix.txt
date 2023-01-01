@@ -1,0 +1,144 @@
+#Taking first matrix from user
+
+print("Enter the no. of rows & no. of columns of 1st matrix: ")
+n1=int(input("No. of rows of 1st matrix: "))
+m1=int(input("No. of columns of 1st matrix: "))
+print("Enter the elements of the 1st matrix")
+matrix1 = []
+for i in range(n1):
+    a =[]
+    for j in range(m1):
+        a.append(int(input()))
+    matrix1.append(a)
+for i in range(n1):
+    for j in range(m1):
+        print(matrix1[i][j], end = " ")
+    print()
+
+
+#Taking second matrix from user
+
+print("Enter the no. of rows & no. of columns of 2nd matrix: ")
+n2=int(input("No. of rows of 2nd matrix:"))
+m2=int(input("No. of columns of 2nd matrix: "))
+print("Enter the elements of the 2nd matrix")
+matrix2 = []
+for i in range(n2):
+    a =[]
+    for j in range(m2):
+        a.append(int(input()))
+    matrix2.append(a)
+for i in range(n2):
+    for j in range(m2):
+        print(matrix2[i][j], end = " ")
+    print()
+
+
+#Asking user the operation he wants to perform
+
+print("Enter 1 for the addition of two matrices\n",
+      "Enter 2 for substraction of two matrices\n",
+      "Enter 3 for multiplication of two matrices\n",
+      "Enter 4 for transpose of the matrix\n")
+operation=int(input("Enter the no.: "))
+
+
+#Addition
+
+if operation==1:
+    Add_Matrix=[]
+    if n1==n2 and m1==m2:
+        for i in range(n1):
+            add=[]
+            for j in range(m1):
+               add.append(matrix1[i][j]+matrix2[i][j])
+            Add_Matrix.append(add)
+        print("The addition of two matrix is:")
+        for i in range(n1):
+            for j in range(m1):
+                print(Add_Matrix[i][j], end=' ')
+            print()
+    else:
+        print("The no. of rows & columns must be equal of both the matrices for addition.Please try again.")
+
+
+#Substraction
+
+if operation==2:
+    Sub_Matrix=[]
+    if n1==n2 and m1==m2:
+        for i in range(n1):
+            sub=[]
+            for j in range(m1):
+                sub.append(matrix1[i][j]-matrix2[i][j])
+            Sub_Matrix.append(sub)
+        print("The sunstraction of two matrix is:")
+        for i in range(n1):
+            for j in range(m1):
+                print(Sub_Matrix[i][j], end=' ')
+            print()
+    else:
+        print("The no. of rows & columns must be equal of both the matrices for substraction.Please try again.")
+
+
+#Multiplication
+
+if operation==3:
+    Mul_Matrix=[]
+    for i in range(n1):
+        u = []
+        for j in range(m1):
+            result=0
+            for k in  range(m1):
+                result=result+matrix1[i][k]*matrix2[k][j]
+            u.append(result)
+        Mul_Matrix.append(u)
+    print("The multiplication of the two matrices is:")
+    for i in range(n1):
+        for j in range(m1):
+            print(Mul_Matrix[i][j], end=' ')
+        print()
+#Transpose of matrix
+if operation==4:
+
+    print("The 1st matrix A is:")
+    for i in range(n1):
+        for j in range(m1):
+            print(matrix1[i][j], end=' ')
+        print()
+    print("The transpose of 1st matrix A is: ")
+    for i in range(n1):
+        for j in range(m1):
+            print(matrix1[j][i], end=' ')
+        print()
+    print("The 2nd matrix B is:")
+    for i in range(n2):
+        for j in range(m2):
+            print(matrix2[i][j], end=' ')
+        print()
+    print("The transpose of 2nd matrix B is:")
+    for i in range(n2):
+        for j in range(m2):
+            print(matrix2[j][i], end=' ')
+        print()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
